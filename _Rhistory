@@ -1,0 +1,512 @@
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+dept _air_ot_rate <- nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+nyc <- nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+dept_per_ot_fight <- nyc[max(nyc$ot_dep_rate * 100),]
+dept_per_ot_fight
+nyc[max(nyc$ot_dep_rate * 100),]
+nyc[(nyc$ot_dep_rate == max(nyc$ot_dep_rate)),]
+max_dept_percentage <- nyc[(nyc$ot_dep_rate == max(nyc$ot_dep_rate)),1]
+max_dept_percentage
+max_dept_percentage <- nyc[(nyc$ot_dep_rate == max(nyc$ot_dep_rate)),]
+max_dept_percentage <- nyc[(nyc$ot_dep_rate == max(nyc$ot_dep_rate)),2] * 100
+max_dept_percentage
+max_dept_airport
+nyc <- nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+max_dept_airport <- nyc[(nyc$ot_dep_rate == max(nyc$ot_dep_rate)),1]
+max_dept_airport
+nyc <- nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+max_dept_airport <- nyc[(nyc$ot_dep_rate == max(nyc$ot_dep_rate)),]
+max_dept_airport
+nyc <- nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+max_dept_airport <- nyc[(nyc$ot_dep_rate == max(nyc$ot_dep_rate)),]
+max_dept_airport
+nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+ggplot(data = nycflights,aes(x= origin , y = dep_type)) + geom_bar()
+names(nyc)
+ggplot(data = nyc,aes(x = origin , y = ot_dep_rate)) + geom_bar()
+geom_bar()
+nycflights <- nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+names(nyc)
+ggplot(data = nycflights, aes(x = origin, fill = dep_type)) +
+geom_bar()
+nycflights <- nycflights %>%
+mutate(dep_type = ifelse(dep_delay < 5 , "on-time","delayed"))
+nycflights <- nycflights %>%
+group_by(origin) %>%
+summarise(ot_dep_rate = sum(dep_type == "on-time") / n()) %>%
+arrange(desc(ot_dep_rate))
+nycflights <- nycflights %>%
+mutate(dep_type = ifelse(dep_delay < 5 , "on-time","delayed"))
+nycflights
+library(statsr)
+library(dplyr)
+library(ggplot2)
+data(nycflights)
+nycflights
+```
+nycflights <- nycflights %>%
+mutate(dep_type = ifelse(dep_delay < 5 , "on-time","delayed"))
+nycflights
+View(nycflights)
+ggplot(data = nycflights, aes(x = origin, fill = dep_type)) +
+geom_bar()
+x <- nycflights
+names(x)
+nycflights <- nycflights %>%
+mutate(avg_speed = (distance / (air_time * 60)))
+nycflights
+View(nycflights)
+nycflights <- x
+nycflights
+nycflights <- nycflights %>%
+mutate(avg_speed = (distance / (air_time / 60)))
+View(nycflights)
+nycflights %>%
+select(avg_speed,tailnum)
+nycflights %>%
+select(avg_speed,tailnum)%>%
+arrange(desc(avg_speed))
+x <- nycflights %>%
+select(avg_speed,tailnum)%>%
+arrange(desc(avg_speed))
+x[max(x$avg_speed),]
+x[x$avg_speed == max(x$avg_speed),]
+ggplot(nycflights,aes(x = avg_speed , y= distance))+geom_point(1)
+ggplot(data = nycflights,aes(x = avg_speed , y= distance))+geom_point(1)
+ggplot(data = nycflights, aes(x = avg_speed , y= distance))+geom_point(1)
+ggplot(data = nycflights,aes(x = avg_speed,y = distance))
+ggplot(data = nycflights,aes(x = avg_speed,y = distance)) + geom_point(1)
+ggplot(data = nycflights,aes(x = avg_speed,y = distance)) + geom_point()
+ggplot(data = nycflights,aes(x = avg_speed,y = distance)) + geom_point(shape = 1)
+ggplot(data = nycflights,aes(x = distance,y = avg_speed)) + geom_point(shape = 1)
+ggplot(data = nycflights,aes(x = distance,y = avg_speed)) + geom_point(shape = 1) + geom_line()
+ggplot(data = nycflights,aes(x = distance,y = avg_speed)) + geom_point(shape = 1) + geom_smooth(method = lm)
+names(nycflights)
+y <-  nycflights
+View(y)
+y %>%
+mutate(arr_type = ifelse(!arr_delay > 0,"on time","delayed"))
+arr_type_flights <- y %>%
+mutate(arr_type = ifelse(!arr_delay > 0,"on time","delayed"))
+View(arr_type_flights)
+names(nycflights)
+names(arr_type_flights)
+arr_type_flights %>%
+filter(arr_type == "on time")
+arr_type_flights %>%
+filter(arr_type == "on time",dep_type == "delayed")%>%
+arr_type_flights %>%
+filter(arr_type == "on time",dep_type == "delayed")
+arr_type_flights %>%
+filter(arr_type == "on time",dep_type == "delayed")
+arr_type_flights %>%
+filter(arr_type == "on time",dep_type == "delayed")%>%
+group_by(dest)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "on time")/n())
+arr_type_flights %>%
+filter(dep_type == "delayed")%>%
+group_by(dest)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "on time")/n())
+arr_type_flights %>%
+summarise(ot_arrival_percentage = sum(arr_type == "on time")/n())
+arr_type_flights %>%
+select(ot_arrival_percentage = sum(arr_type == "delayed")/n())
+names(arr_type_flights)
+arr_type_flights %>%
+group_by(tailnum)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "delayed")/n())
+arr_type_flights %>%
+group_by(tailnum)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "delayed")/n())%>%
+select(tailnum,ot_arrival_percentage,dest)
+arr_type_flights %>%
+group_by(tailnum)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "delayed")/n())%>%
+select(tailnum,ot_arrival_percentage)
+arr_type_flights %>%
+group_by(tailnum)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "delayed")/n())%>%
+select(tailnum,ot_arrival_percentage,dest)
+arr_type_flights %>%
+group_by(tailnum)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "delayed")/n())
+arr_type_flights %>%
+group_by(tailnum)%>%
+summarise(ot_arrival_percentage = sum(arr_type == "delayed")/n())%>%
+arrange(desc(ot_arrival_percentage))
+arr_type_flights %>%
+summarise(ot_arrival_percentage = sum(arr_type == "on time")/%>%
+arr_type_flights %>%
+summarise(ot_arrival_percentage = sum(arr_type == "on time"))
+arr_type_flights %>%
+summarise(ot_arrival_percentage = sum(arr_type == "on time")/sum(dep_type == "delayed"))
+characterData <- read.csv(file.choose())
+View(characterData)
+characterData <- read.csv(file.choose())
+View(characterData)
+str(characterData)
+library(arules)
+library(arulesViz)
+rules <- apriori(characterData)
+characterData <- as.factor(characterData)
+characterData <- as.factor(characterData$S.No)
+x <- lapply(characterData, factor)
+x
+rules <- apriori(characterData)
+str(characterData)
+battleData <- read.csv(file.choose())
+View(battleData)
+useful_data <- c(battleData$name,battleData$attacker_king,battleData$defender_king,battleData$attacker_outcome,battleData$battle_type,battleData$major_death,battleData$major_capture,battleData$attacker_size,battleData$defender_size,battleData$region)
+useful_data <-  as.data.frame(useful_data)
+View(useful_data)
+useful_data <- subset(battleData,select = c(battleData$attacker_king,battleData$defender_king))
+View(useful_data)
+useful_data <- subset(battleData,select = c("attacker_king","defender_king"))
+View(useful_data)
+names(battleData)
+useful_data <- subset(battleData,select = c("name","attacker_king","defender_king","attacker_outcome","battle_type","major_death","major_capture","attacker_size","defender_size","region"))
+View(useful_data)
+class(useful_data)
+class(useful_data$name)
+class(useful_data$attacker_king)
+class(useful_data$attacker_king)
+class(useful_data$attacker_outcome)
+class(useful_data$attacker_size)
+class(useful_data$battle_type)
+useful_data$major_death <- as.factor(useful_data$major_death)
+View(useful_data)
+useful_data$major_capture <- as.factor(useful_data$major_capture)
+useful_data$attacker_size <- as.factor(useful_data$attacker_size)
+useful_data$defender_size <- as.factor(useful_data$defender_size)
+str(useful_data)
+library(arules)
+rules <- apriori(useful_data)
+inspect(rules)
+sorted.rules <- sort(rules,by = "confidence")
+inspect(sorted.rules)
+sorted.rules
+inspect(sorted.rules)
+load(titanic.raw)
+load("~/titanic.raw.rdata")
+load(titanic.raw)
+View(titanic.raw)
+str(titanic.raw)
+rules <- apriori(titanic.raw)
+inspect(rules)
+rules <- apriori(titanic.raw,parameter = list(minlen=2, supp=0.005, conf=0.8),
+appearance = list(rhs=c("Survived=No", "Survived=Yes"),
+default="lhs"),control = list(verbose=F))
+rules.sorted <- sort(rules, by="lift")
+inspect(rules.sorted)
+names(useful_data)
+rules <- apriori(sorted.rules,parameter = list(minlen=2, supp=0.005, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=1", "attacker_outcome=0"),
+default="lhs"),control = list(verbose=F))
+rules <- apriori(sorted.rules,parameter = list(minlen=2, supp=0.005, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=1", "attacker_outcome=0")),control = list(verbose=F))
+#modifying the appreance example
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.005, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=1", "attacker_outcome=0"),
+default="lhs"),control = list(verbose=F))
+str(useful_data)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.005, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+rules <- apriori(useful_data)
+inspect(rules)
+inspect(rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.60, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "confidence")
+inspect(sorted.rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.20, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "confidence")
+inspect(sorted.rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.20, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "confidence")
+inspect(sorted.rules)
+rules <- apriori(useful_data,appearance = list(rhs=c("attacker_outcome=loss"))
+rules <- apriori(useful_data,appearance = list(rhs=c("attacker_outcome=loss")))
+rules <- apriori(useful_data,appearance = list(rhs=c("attacker_outcome=loss")))
+inspect(rules)
+rules <- apriori(useful_data)
+inspect(rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.20, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "confidence")
+inspect(sorted.rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.20, conf=0.8),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "confidence")
+inspect(sorted.rules)
+sorted.rules <- sort(rules,by = "lift")
+inspect(sorted.rules)
+inspect(sorted.rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.20, conf=0.9),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "lift")
+inspect(sorted.rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.50, conf=0.9),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "lift")
+inspect(sorted.rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.30, conf=0.9),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "lift")
+inspect(sorted.rules)
+rules <- apriori(useful_data,parameter = list(minlen=2, supp=0.20, conf=0.9),
+appearance = list(rhs=c("attacker_outcome=win", "attacker_outcome=loss"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "lift")
+inspect(sorted.rules)
+# find redundant rules
+subset.matrix <- is.subset(rules.sorted, rules.sorted)
+subset.matrix[lower.tri(subset.matrix, diag=T)] <- NA
+redundant <- colSums(subset.matrix, na.rm=T) >= 1
+which(redundant)
+# remove redundant rules
+rules.pruned <- rules.sorted[!redundant]
+inspect(rules.pruned)
+# find redundant rules
+subset.matrix <- is.subset(sorted.rules, sorted.rules)
+subset.matrix[lower.tri(subset.matrix, diag=T)] <- NA
+redundant <- colSums(subset.matrix, na.rm=T) >= 1
+which(redundant)
+# remove redundant rules
+rules.pruned <- rules.sorted[!redundant]
+inspect(rules.pruned)
+# remove redundant rules
+rules.pruned <- sorted.rules[!redundant]
+inspect(rules.pruned)
+#Visualizing Association rules by plotting
+library(arulesViz)
+plot(rules)
+#Visualizing Association rules by plotting
+library(arulesViz)
+plot(rules)
+#Visualizing Association rules by plotting
+library(arulesViz)
+plot(rules.pruned)
+names(battleData)
+#' subseted data
+useful_data <- subset(battleData,select = c("name","attacker_king","defender_king","attacker_outcome","battle_type","major_death","major_capture","attacker_size","defender_size","region"))
+names(useful_data)
+characterData <- read.csv(file.choose())
+characterData <- read.csv(file.choose())
+names(characterData)
+View(characterData)
+View(characterData)
+useful_data <- subset(characterData,select = c("Name","Allegiances","Death.Year","Book.of.Death","Gender","Nobility"))
+View(useful_data)
+names(useful_data)
+library(plyr)
+useful_data %>%
+filter(useful_data$Death.Year != 'NA')
+library(dplyr)
+useful_data %>%
+filter(useful_data$Death.Year != 'NA')
+#' characters which died
+dead_characters <- useful_data %>%
+filter(useful_data$Death.Year != 'NA')
+View(dead_characters)
+dead_characters %>%
+group_by(Allegiances)
+dead_characters %>%
+group_by(Allegiances)%>%
+select(Name,Allegiances)
+dead_characters %>%
+filter(Allegiances == "House Stark" || Allegiances == "Stark") %>%
+group_by(Allegiances)%>%
+select(Name,Allegiances)
+dead_characters %>%
+filter(Allegiances == "House Stark") %>%
+group_by(Allegiances)%>%
+select(Name,Allegiances)
+dead_characters %>%
+filter(Allegiances == "Stark") %>%
+group_by(Allegiances)%>%
+select(Name,Allegiances)
+dead_characters %>%
+filter(Allegiances == "Lanniester") %>%
+group_by(Allegiances)%>%
+select(Name,Allegiances)
+View(useful_data)
+View(dead_characters)
+names(useful_data)
+rules <- apriori(dead_characters)
+dead_characters <- as.factor(dead_characters[,3:6])
+dead_characters <- as.factor(dead_characters$Death.Year)
+dead_characters <- useful_data %>%
+filter(useful_data$Death.Year != 'NA')
+dead_characters$Death.Year <- as.factor(dead_characters$Death.Year)
+dead_characters$Book.of.Death <- as.factor(dead_characters$Book.of.Death)
+dead_characters$Gender <- as.factor(dead_characters$Gender)
+dead_characters$Nobility <- as.factor(dead_characters$Nobility)
+str(dead_characters)
+rules <- apriori(dead_characters)
+inspect(rules)
+rules <- apriori(dead_characters,parameter = list(minlen=2, supp=0.20, conf=0.9),
+appearance = list(rhs=c("Gender=1", "Gender=0"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "lift")
+inspect(sorted.rules)
+rules <- apriori(dead_characters,parameter = list(minlen=2, supp=0.20, conf=0.8),
+appearance = list(rhs=c("Gender=1", "Gender=0"),
+default="lhs"),control = list(verbose=F))
+sorted.rules <- sort(rules,by = "lift")
+inspect(sorted.rules)
+# find redundant rules
+subset.matrix <- is.subset(sorted.rules, sorted.rules)
+subset.matrix[lower.tri(subset.matrix, diag=T)] <- NA
+redundant <- colSums(subset.matrix, na.rm=T) >= 1
+which(redundant)
+# remove redundant rules
+rules.pruned <- sorted.rules[!redundant]
+inspect(rules.pruned)
+library(arulesViz)
+plot(rules.pruned)
+library(ggplot2)
+ggplot(rules.pruned)
+names(useful_data)
+rules <- apriori(useful_data)
+remove(dead_characters)
+View(useful_data)
+View(characterData)
+latest_book_alive_characters <-  characterData %>%
+filter(DwD == '1')
+View(latest_book_alive_characters)
+View(useful_data)
+View(latest_book_alive_characters)
+characterDeathPrediction <- read.csv(file.choose())
+View(characterData)
+View(characterDeathPrediction)
+names(characterDeathPrediction)
+count(characterDeathPrediction)
+count(characterDeathPrediction$male == 1)
+males <-  characterDeathPrediction %>%
+filter(male == 1)
+percentage_males <- count(males) / count(characterDeathPrediction)
+View(percentage_males)
+percentage_males <-  percentage_males * 100
+females <-  characterDeathPrediction %>%
+filter(male == 0)
+percentage_females <- count(females) / count(characterDeathPrediction)
+percentage_females <-  percentage_females * 100
+percentage_females
+percentage_males
+ggplot(characterDeathPrediction,aes(x = males , y = plod))+geom_point()
+ggplot(characterDeathPrediction,aes(x = male , y = plod))+geom_point()
+ggplot(males,aes(x = male , y = plod))+geom_point()
+rules <- apriori(characterDeathPrediction)
+library(arules)
+library(dplyr)
+library(ggplot2)
+names(characterData)
+characterData <- read.csv(file.choose())
+View(characterData)
+characterData <- read.csv(file.choose())
+names(characterData)
+use_characterData <- characterData[,-c(1:5)]
+View(use_characterData)
+names(use_characterData)
+alive.lm <- lm(plod ~ isAlive , data = use_characterData )
+plod <- 0
+alive.lm <- lm( plod~isAlive , data = use_characterData )
+alive.lm <- lm(popularity~isAlive , data = use_characterData )
+coeffs <- coefficients(alive.lm)
+coeffs
+alive.lm <- lm(isAlive~popularity , data = use_characterData)
+coeffs <- coefficients(alive.lm)
+coeffs
+popalive <- coeffs[1] + coeffs[2] * alive
+alive <- 1
+popalive <- coeffs[1] + coeffs[2] * alive
+popalive
+View(use_characterData)
+alive <- 0.040
+popalive <- coeffs[1] + coeffs[2] * alive
+popalive
+popalive <- coeffs[1] + coeffs[2] * alive
+popalive
+alive <- 1
+popalive <- coeffs[1] + coeffs[2] * alive
+popalive
+alive <- 20
+popalive <- coeffs[1] + coeffs[2] * alive
+popalive
+alive <- 1
+popalive <- coeffs[1] + coeffs[2] * alive
+popalive
+alive.lm <- lm(isAlive~isPopular , data = use_characterData)
+coeffs <- coefficients(alive.lm)
+coeffs
+popalive <- coeffs[1] + coeffs[2] * popular
+popular <- 0
+popalive <- coeffs[1] + coeffs[2] * popular
+popalive
+popular <- 1
+popalive <- coeffs[1] + coeffs[2] * popular
+popalive
+alive.lm <- lm(isAlive~isPopular+isNobel , data = use_characterData)
+alive.lm <- lm(isAlive~isPopular+isNoble , data = use_characterData)
+coeffs <- coefficients(alive.lm)
+coeffs
+popular <- 1
+popalive <- coeffs[1] + coeffs[2] * popular
+popalive
+coeffs
+confint(coeffs,level = 0.95)
+coeffs <- coefficients(alive.lm)
+summary(coeffs)
+confint(coeffs,level = 0.95)
+fitted(coeffs)
+shiny::runApp('G:/R Directory/MDAApp')
+shiny::runApp('G:/R Directory/MDAApp')
+shiny::runApp('G:/R Directory/MDAApp')
+shiny::runApp('G:/R Directory/MDAApp')
+setwd("G;:/R Directory/MDAApp")
+setwd("G:/R Directory/MDAApp")
+load(".RData")
+library(shiny)
+runApp()
+runApp
+runApp()
+shiny::runApp()
+shiny::runApp()
+runApp()

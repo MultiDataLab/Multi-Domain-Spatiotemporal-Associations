@@ -1,0 +1,9 @@
+Version: 1.0
+Type: Shiny App
+Title: Unusual Spatio-temporal Associations 
+Author: Prathamesh Walkikar
+DisplayMode: Normal
+Associated Files : ui.R ----- the application front endinter face
+		   server.R ------- the appliction logic
+		   global.R ------- global variables decleration and usage
+                   ReadMe.txt ------- application pre-requisites and usage information
